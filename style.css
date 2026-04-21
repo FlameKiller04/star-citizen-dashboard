@@ -1,52 +1,119 @@
+/* INDUSTRIAL THEME */
+
 body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    background: radial-gradient(circle at top, #0a0f1f, #02040a);
-    color: #00eaff;
-    text-align: center;
-  }
-  
-  h1 {
-    text-shadow: 0 0 10px #00eaff;
-  }
-  
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #0a0a0a;
+  color: #ffd000;
+  text-align: center;
+}
+
+/* HEADER */
+h1 {
+  background: #111;
+  padding: 15px;
+  border-bottom: 3px solid #ffd000;
+  text-shadow: 0 0 10px #ffd000;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 20px;
+}
+
+/* PANELS */
+.panel {
+  background: #111;
+  border: 2px solid #ffd000;
+  border-radius: 8px;
+  padding: 15px;
+  position: relative;
+  box-shadow: 0 0 15px #000 inset;
+}
+
+/* HAZARD STRIPE TOP */
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffd000,
+    #ffd000 10px,
+    #000 10px,
+    #000 20px
+  );
+}
+
+/* INPUTS */
+input {
+  padding: 8px;
+  margin: 5px;
+  background: #000;
+  border: 1px solid #ffd000;
+  color: #ffd000;
+}
+
+/* BUTTONS */
+button {
+  padding: 8px 12px;
+  background: #ffd000;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #ffea00;
+  box-shadow: 0 0 10px #ffd000;
+}
+
+/* LIST ITEMS */
+li {
+  margin: 6px 0;
+  padding: 8px;
+  background: #1a1a1a;
+  border-left: 4px solid #ffd000;
+  text-align: left;
+}
+
+/* MAP */
+#map {
+  height: 300px;
+  border: 2px solid #ffd000;
+}
+
+/* WARNING TEXT EFFECT */
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: " ⚠";
+  color: #ffd000;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* AUTH + SQUAD PANELS */
+.panel input {
+  width: 80%;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
   .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 20px;
+    grid-template-columns: 1fr;
   }
-  
-  .panel {
-    background: rgba(0,20,40,0.6);
-    border: 1px solid #00eaff55;
-    border-radius: 12px;
-    padding: 15px;
-    backdrop-filter: blur(10px);
-  }
-  
-  input {
-    padding: 8px;
-    margin: 5px;
-    background: black;
-    border: 1px solid #00eaff;
-    color: #00eaff;
-  }
-  
-  button {
-    padding: 8px;
-    background: #00eaff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  li {
-    margin: 6px 0;
-    padding: 6px;
-    background: #001a2f;
-  }
-  
-  #map {
-    height: 300px;
-    border: 1px solid #00eaff;
-  }
+}
