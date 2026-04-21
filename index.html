@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Star Citizen Command Console</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Leaflet map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+<h1>🚀 COMMAND CONSOLE</h1>
+
+<!-- AUTH -->
+<div class="panel">
+  <input id="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="signup()">Sign Up</button>
+  <button onclick="login()">Login</button>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<!-- SQUAD -->
+<div class="panel">
+  <input id="squadName" placeholder="Squad name">
+  <button onclick="createSquad()">Create</button>
+
+  <input id="joinId" placeholder="Squad ID">
+  <button onclick="joinSquad()">Join</button>
+
+  <p id="currentSquad"></p>
+</div>
+
+<div class="grid">
+
+  <!-- CONTRACTS -->
+  <section class="panel">
+    <h2>📋 Contracts</h2>
+    <input id="contractInput">
+    <button onclick="addContract()">+</button>
+    <ul id="contractList"></ul>
+  </section>
+
+  <!-- INVENTORY -->
+  <section class="panel">
+    <h2>📦 Inventory</h2>
+    <input id="itemName">
+    <input id="itemQty" type="number">
+    <button onclick="addItem()">+</button>
+    <ul id="inventoryList"></ul>
+  </section>
+
+  <!-- CARGO -->
+  <section class="panel">
+    <h2>🚀 Cargo</h2>
+    <input id="cargoName">
+    <input id="cargoQty" type="number">
+    <input id="cargoBuy" placeholder="Buy">
+    <input id="cargoSell" placeholder="Sell">
+    <button onclick="addCargo()">+</button>
+    <ul id="cargoList"></ul>
+  </section>
+
+  <!-- PROFIT -->
+  <section class="panel">
+    <h2>💰 Profit</h2>
+    <input id="buyPrice">
+    <input id="sellPrice">
+    <input id="amount">
+    <button onclick="calcProfit()">Calc</button>
+    <p id="profitResult"></p>
+  </section>
+
+  <!-- TRADE DATA -->
+  <section class="panel">
+    <h2>📡 Live Trade</h2>
+    <button onclick="loadTradeData()">Refresh</button>
+    <ul id="tradeList"></ul>
+  </section>
+
+  <!-- MAP -->
+  <section class="panel">
+    <h2>🗺️ Map</h2>
+    <div id="map"></div>
+  </section>
+
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

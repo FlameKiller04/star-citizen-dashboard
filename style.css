@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #0a0f1f, #02040a);
+    color: #00eaff;
+    text-align: center;
+  }
+  
+  h1 {
+    text-shadow: 0 0 10px #00eaff;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .panel {
+    background: rgba(0,20,40,0.6);
+    border: 1px solid #00eaff55;
+    border-radius: 12px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+  }
+  
+  input {
+    padding: 8px;
+    margin: 5px;
+    background: black;
+    border: 1px solid #00eaff;
+    color: #00eaff;
+  }
+  
+  button {
+    padding: 8px;
+    background: #00eaff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  li {
+    margin: 6px 0;
+    padding: 6px;
+    background: #001a2f;
+  }
+  
+  #map {
+    height: 300px;
+    border: 1px solid #00eaff;
+  }
